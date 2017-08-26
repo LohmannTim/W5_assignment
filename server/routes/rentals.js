@@ -1,6 +1,6 @@
 var express = require('express'); //bringing in express
 var router = express.Router(); //using the express library/package
-
+var mongoose = require('mongoose');
 var Rental = require('../models/rentals.js');
 
 router.get('/', function(req, res){ //building a door to get stuff through and has callback function
@@ -46,4 +46,4 @@ router.post('/', function(req, res){ //building a door to get stuff through and 
 
 
 // export our data model
-module.exports = mongoose.model('Rental', rentalSchema);
+module.exports = router;

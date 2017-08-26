@@ -16,3 +16,23 @@ app.use(bodyParser.json()); //transforms data from front end to server readable
 app.use('/', index); //just a route to the front end
 app.use('/rental', rentals);
 app.use('/listing', listings);
+
+//mongoose connection
+var databaseUrl = 'mongodb://localhost:27017/realestate';//uses the name of our db from robo 3t
+mongoose.connect(databaseUrl,
+{
+    useMongoClient: true
+});
+// optional- check to make sure connections are working
+mongoose.connection.on('connected', function() {
+    console.log('mongoose connected to : ', databaseUrl);    
+});
+mongoose.connection.on('error', function (err) {
+    console.log('mongoose connection error to : ', err);
+});
+//start me up a dang server
+app.set('port', process.env.PORT || 5000);//process.env.PORT = process is an object that uses the environment variable to set port for production environment || or use 5000
+app.listen(app.get('port'), function() {
+    console.log('Listening on port: ', app.get('port'));
+    
+});

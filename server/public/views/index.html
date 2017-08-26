@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <title></title>
-        <script src='/scripts/client.js'></script>
-        <link href="css/style.css" rel="stylesheet">
+        <script type="text/javascript" src="/vendor/angular.min.js"></script>
+        <script type="text/javascript" src="/scripts/client.js"></script>
+        <!-- <script src='/scripts/client.js'></script> -->
+        <script type="text/javascript" src="/scripts/controllers/listings.controller.js"></script>
+        <script type="text/javascript" src="/scripts/services/listing.service.js"></script>
+        <!-- <script type="text/javascript" src="/controllers/rentals.controller.js"></script> -->
+        <!-- <script type="text/javascript" src="/services/rental.service.js"></script> -->
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <!-- <link rel="stylesheet" href="/vendor/bootstrap.min.css" /> -->
     </head>
-    <body>
+    <body ng-app='mgApp'>
     <h1>HOME DUDE!!</h1>
+    <ng-view></ng-view>
+    <!-- <div class="container" ng-controller="ListingController as vm">
+        <h1>Mongo All Stars!</h1>
+        <div class="row">
+            <div class="listings">
+                {{vm}}
+           
+            </div>
+        </div>
+        <div class="container" ng-controller="RentalController as vm">
+            <h1>Mongo All Stars!</h1>
+            <div class="row">
+                <div class="rentals">
+                    {{vm}}
+                
+                </div>
+            </div> -->
     </body>
 </html>
