@@ -4,13 +4,13 @@ myApp.controller('ListingController', //give myApp.controller the name of 'Listi
         console.log('Listing Controller loaded');
 
         var self = this;
-        self.newListing = {};
-        ListingService.getListing();
+        // self.newListing = {};
+        // ListingService.getListing();
         self.gottenListing = ListingService.gottenListing;
         
-        self.addListing = function() {
+        // self.addListing = function() {
 
-        }
+        // }
 
         
     }

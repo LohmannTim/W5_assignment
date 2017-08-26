@@ -17,7 +17,10 @@ myApp.service('ListingService', ['$http', function($http){
         $http.post('/listing', newListing).then(function(response) {
             console.log('service post response: ', response);
             self.getListing();   
-        });
-        
+        });  
     };
+
+    self.getListing();
 }]);
+
+// console.log('listing service loaded')
