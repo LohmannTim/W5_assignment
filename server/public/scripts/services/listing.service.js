@@ -1,13 +1,13 @@
-myApp.service('ListingService', ['$http', function($http){
+myApp.service('ListingService', ['$http', function($http){//instantiating a new service, naming it, and declaring its dependencies.
     console.log('Listing service loaded');
-    
+    //$http is an object that allows us to bring in the tools to do gets, posts, etc and make calls to the routes
     var self = this;
-    self.gottenlisting = { list: [] };
+    self.listings = { list: [] };//preparing an object to be consumed by controller
 
     self.getListing = function() {
-        $http.get('/listing').then(function(response) {
-            self.gottenlisting.list = response.data;
-            console.log('get response:', self.gottenlisting);
+        $http.get('/listing').then(function(response) {//response is instantiated in to the object 'self'
+            self.listings.list = response.data; //this is the data being returned with/as response
+            console.log('get response:', self.listings);
             
         });
     };

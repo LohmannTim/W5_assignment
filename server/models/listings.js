@@ -1,6 +1,6 @@
 
 var mongoose = require('mongoose');//brings in mongoose
-var Schema = mongoose.Schema; //sets up to build a schema/data model
+var Schema = mongoose.Schema; //sets up to build a schema/data model. instantiating a mold to create a data model.
 
 // create the Schema aka build a data model
 var listingsSchema = new Schema({

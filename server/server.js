@@ -1,8 +1,8 @@
 var express = require('express'); //build a bridge to the library
 var app = express();//hey express- gimme those blueprints
 var bodyParser = require('body-parser');//body parser transforms data from front end to make readable to server
-var path = require('path');//who knows....
-var index = require('./routes/index.js')//buiding a bridge
+var path = require('path');//ambiguous term for connecting two parts of the app.  We are calling it in here.
+var index = require('./routes/index.js')//buiding a bridge to index.js
 var listings = require('./routes/listings.js')//buiding a bridge to listings
 var rentals = require('./routes/rentals.js')//buiding a bridge to rentals
 
@@ -13,15 +13,15 @@ app.use(express.static(path.join(__dirname, './public'))); //static pointing to 
 app.use(bodyParser.json()); //transforms data from front end to server readable
 
 //express routes
-app.use('/', index); //just a route to the front end
-app.use('/rental', rentals);
-app.use('/listing', listings);
+app.use('/', index); //tells us where to go when we get to this url.
+app.use('/rental', rentals);//when you hit rental- go to rentals... duh
+app.use('/listing', listings);//same as above
 
 //mongoose connection
 var databaseUrl = 'mongodb://localhost:27017/realestate';//uses the name of our db from robo 3t
-mongoose.connect(databaseUrl,
+mongoose.connect(databaseUrl,//connect is a method of mongoose and take is the db location and configuration object
 {
-    useMongoClient: true
+    useMongoClient: true //configuration object with this property
 });
 // optional- check to make sure connections are working
 mongoose.connection.on('connected', function() {

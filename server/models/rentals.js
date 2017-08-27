@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var Schema = mongoose.Schema;//object to create an object. below is the layout of the object
 
 // create the Schema aka build a data model
 var rentalSchema = new Schema({
