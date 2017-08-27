@@ -1,1 +1,31 @@
 <h1>listings</h1>
+<div>
+    <form>
+
+        <label>cost</label>
+        <input type="number" name="cost" ng-model="vm.newListing.cost">
+        <label>sqft</label>
+        <input type="number" name="sqft" ng-model="vm.newListing.sqft">
+        <label> city</label>
+        <input type='text' name="city" ng-model="vm.newListing.city">
+        <button ng-click="vm.addListing()">Add Listing</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>price</th>
+                <th>sqft</th>
+                <th>city</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat='listings in vm.listings.list'>
+            <tr>
+                <td>${{listings.cost}} </td>
+                <td>{{listings.sqft}}</td>
+                <td>{{listings.city}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

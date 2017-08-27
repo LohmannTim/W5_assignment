@@ -1,1 +1,31 @@
 <h1>rentals</h1>
+<div>
+    <form>
+
+        <label>rent</label>
+        <input type="number" name="rent" ng-model="vm.newRental.rent">
+        <label>sqft</label>
+        <input type="number" name="sqft" ng-model="vm.newRental.sqft">
+        <label> city</label>
+        <input type="text" name="city" ng-model="vm.newRental.city">
+        <button ng-click="vm.addRental()">Add Rental</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>rent</th>
+                <th>sqft</th>
+                <th>city</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat='rentals in vm.rentals.list'>
+            <tr>
+                <td>${{rentals.rent}} </td>
+                <td>{{rentals.sqft}}</td>
+                <td>{{rentals.city}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

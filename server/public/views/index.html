@@ -6,16 +6,16 @@
         <script type="text/javascript" src="/vendor/angular-route.min.js"></script>        
         <script type="text/javascript" src="/scripts/client.js"></script>
         <script type="text/javascript" src="/scripts/controllers/listings.controller.js"></script>
-        <script type="text/javascript" src="/scripts/services/listing.service.js"></script>
-        <script type="text/javascript" src="/controllers/rentals.controller.js"></script>
-        <script type="text/javascript" src="/services/rental.service.js"></script> 
+        <script type="text/javascript" src="/scripts/services/listings.service.js"></script>
+        <script type="text/javascript" src="/scripts/controllers/rentals.controller.js"></script>
+        <script type="text/javascript" src="/scripts/services/rentals.service.js"></script> 
         <!-- <link href="css/style.css" rel="stylesheet"> -->
         <!-- <link rel="stylesheet" href="/vendor/bootstrap.min.css" /> -->
     </head>
     <body ng-app='myApp'>
     <h1>HOME DUDE!!</h1>
-    <a href="/rentals">rentals</a> <!--creating links to the pages for rentals and listings on the DOM-->
-    <a href="/listings">listings</a>
+    <a href="#!rentals">rentals</a> <!--creating links to the pages for rentals and listings on the DOM-->
+    <a href="#!listings">listings</a><!--needs #! bc angular uses this bc its a spa so its not going anywhere-->
     <ng-view></ng-view>
     
     </body>

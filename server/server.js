@@ -14,8 +14,8 @@ app.use(bodyParser.json()); //transforms data from front end to server readable
 
 //express routes
 app.use('/', index); //tells us where to go when we get to this url.
-app.use('/rental', rentals);//when you hit rental- go to rentals... duh
-app.use('/listing', listings);//same as above
+app.use('/rentals', rentals);//when you hit rental- go to rentals... duh
+app.use('/listings', listings);//same as above
 
 //mongoose connection
 var databaseUrl = 'mongodb://localhost:27017/realestate';//uses the name of our db from robo 3t

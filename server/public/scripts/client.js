@@ -2,9 +2,9 @@ var myApp = angular.module('myApp', ['ngRoute']); //declares the variable.  call
 
 myApp.config(['$routeProvider', function ($routeProvider) { //angular route- client side routing
     console.log('route config loaded');
-    $routeProvider.when('/', //when you hit '/' I want you to 
+    $routeProvider.when('/', //when you hit '/' I want you to...
         {
-            redirectTo: 'listings'
+            redirectTo: '/listings'
         } //redirect when hit the '/'
     ).when('/listings', { //this is defining everything we need
         templateUrl: 'views/listings.html', //provides template- use this part of html

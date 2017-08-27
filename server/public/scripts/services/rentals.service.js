@@ -1,19 +1,19 @@
-myApp.service('RentalgService', ['$http', function($http){
+myApp.service('RentalService', ['$http', function($http){
     console.log('Rental service loaded');
     
     var self = this;
-    self.gottenrental = { list: [] };
-
+    self.rentals = { 
+        list: [] 
+    };
     self.getRental = function() {
-        $http.get('/rental').then(function(response) {
-            self.gottenrental.list = response.data;
-            console.log('get response:', self.gottenrental);    
+        $http.get('/rentals').then(function(response) {
+            self.rentals.list = response.data;
+            console.log('get response:', self.rentals);    
         });
     };
-
     self.addRental = function(newRental) {
         console.log('sending this object to server', newRental);
-        $http.post('/listing', newRental).then(function(response) {
+        $http.post('/rentals', newRental).then(function(response) {
             console.log('service post response: ', response);
             self.getRental();
         });

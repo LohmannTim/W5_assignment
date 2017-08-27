@@ -6,10 +6,10 @@ myApp.controller('RentalController', //give myApp.controller the name of 'Rental
         var self = this;
         self.newRental = {};
         RentalService.getRental();
-        self.gottenRental = RentalService.gottenRental;
+        self.rentals = RentalService.rentals;
         
         self.addRental = function() {
-
+            RentalService.addRental(self.newRental)
         }
 
         
